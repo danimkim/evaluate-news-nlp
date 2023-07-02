@@ -19,16 +19,9 @@
             type="text"
             name="input"
             value=""
-            onblur="onBlur()"
             placeholder="Name"
           />
-          <input
-            type="submit"
-            name=""
-            value="submit"
-            onclick="return handleSubmit(event)"
-            onsubmit="return handleSubmit(event)"
-          />
+          <input type="submit" name="" value="submit" />
         </form>
       </section>
 
@@ -41,12 +34,5 @@
     <footer>
       <p>This is a footer</p>
     </footer>
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker.register("/service-worker.js");
-        });
-      }
-    </script>
   </body>
 </html>

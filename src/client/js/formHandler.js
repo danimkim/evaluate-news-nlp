@@ -6,19 +6,30 @@ function handleSubmit(event) {
   Client.checkForName(formText);
 
   console.log("::: Form Submitted :::");
-  fetch("https://api.meaningcloud.com/sentiment-2.1", {
+
+  postData("http://localhost:8081/analyze", { url: formText }).then(function (
+    res
+  ) {
+    document.getElementById("results").innerHTML = res.agreement;
+  });
+}
+
+async function postData(url = "", data = {}) {
+  const res = await fetch(url, {
     method: "POST",
-    body: {
-      key: process.env.API_KEY,
-      txt: formText,
-      lang: "en",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json",
     },
-  })
-    .then((res) => res.json())
-    .then(function (res) {
-      console.log("res", res);
-      document.getElementById("results").innerHTML = res.message;
-    });
+    body: JSON.stringify(data),
+  });
+
+  try {
+    const resJson = res.json();
+    return resJson;
+  } catch (error) {
+    console.error("Something went wrong! ", error);
+  }
 }
 
 export { handleSubmit };

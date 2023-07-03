@@ -1,10 +1,22 @@
 footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100px;
 
   p {
     font-size: 14px;
+  }
+
+  .link-github {
+    width: 35px;
+    height: 35px;
+    margin: 16px 0;
+
+    img {
+      width: inherit;
+      height: inherit;
+    }
   }
 }

@@ -2,40 +2,78 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title>Evaluate An Article</title>
+    <title>Evaluate A Article</title>
   </head>
 
   <body>
     <header>
-      <div class="">Logo</div>
-      <div class="">navigation</div>
+      <h1>Evaluate A News Article</h1>
     </header>
 
     <main>
       <section>
-        <form class="" onsubmit="return Client.handleSubmit(event)">
+        <form onsubmit="return Client.handleSubmit(event)">
           <input
             id="name"
             type="text"
             name="input"
             value=""
-            placeholder="Name"
+            placeholder="Enter a webpage url"
           />
-          <input type="submit" name="" value="submit" />
+          <div class="button-container">
+            <input type="submit" name="" class="button submit" value="Submit" />
+            <input
+              type="button"
+              name=""
+              class="button cancel"
+              value="Cancel"
+              onclick="return Client.resetInput()"
+            />
+          </div>
         </form>
       </section>
 
-      <section>
-        <strong>Form Results:</strong>
-        <div id="results"></div>
+      <section class="section-form-results">
+        <h2 class="heading-form-results">Form Results</h2>
+        <ul id="results">
+          <li class="item agreement">
+            <span>Agreement</span>
+            <span class="agreement"></span>
+          </li>
+          <li class="item subjectivity">
+            <span>Subjectivity</span>
+            <span class="subjectivity"></span>
+          </li>
+          <li class="item confidence">
+            <span>Confidence</span>
+            <span class="confidence"></span>
+          </li>
+          <li class="item irony">
+            <span>Irony</span>
+            <span class="irony"></span>
+          </li>
+          <li calss="item score-tag">
+            <span>Polarity</span>
+            <span class="score-tag"></span>
+          </li>
+        </ul>
+        <p class="desc">
+          Check out
+          <a
+            href="https://learn.meaningcloud.com/developer/sentiment-analysis/2.1/doc/response#:~:text=been%20carried%20out.-,score_tag,-Polarity%20of%20the"
+            target="_blank"
+            >this reference</a
+          >
+          for the description of each result item.
+        </p>
       </section>
     </main>
 
     <footer>
-      <p>This is a footer</p>
+      <p>Copyright © 2023 Danim Kim All right reserved</p>
     </footer>
 
-    <script>
+    <!-- <script>
       // Check that service workers are supported
       if ("serviceWorker" in navigator) {
         // Use the window load event to keep the page load performant
@@ -43,6 +81,6 @@
           navigator.serviceWorker.register("/service-worker.js");
         });
       }
-    </script>
+    </script> -->
   </body>
 </html>

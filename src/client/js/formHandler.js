@@ -10,7 +10,15 @@ function handleSubmit(event) {
   postData("http://localhost:8081/analyze", { url: formText }).then(function (
     res
   ) {
-    document.getElementById("results").innerHTML = res.agreement;
+    document.querySelector("span.agreement").innerHTML = `${res.agreement}`;
+    document.querySelector(
+      "span.subjectivity"
+    ).innerHTML = `${res.subjectivity}`;
+    document.querySelector("span.confidence").innerHTML = `${res.confidence}`;
+    document.querySelector("span.irony").innerHTML = `${res.irony}`;
+    document.querySelector("span.score-tag").innerHTML = `${res.score_tag}`;
+
+    document.querySelector(".section-form-results").classList.add("visible");
   });
 }
 
@@ -32,4 +40,8 @@ async function postData(url = "", data = {}) {
   }
 }
 
-export { handleSubmit };
+function resetInput() {
+  document.querySelector("#name").value = "";
+}
+
+export { handleSubmit, resetInput };

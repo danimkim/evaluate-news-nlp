@@ -1,14 +1,16 @@
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-width: 390px;
+  min-height: 100vh;
 }
 
 main {
-    flex: 2;
+  flex: 2;
+  padding: 0 16px;
 }
 
 section {
-    max-width: 800px;
-    margin: 50px auto;
+  max-width: 800px;
+  margin: 50px auto;
 }

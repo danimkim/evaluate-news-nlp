@@ -1,0 +1,42 @@
+section.section-form-results {
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+}
+
+.heading-form-results {
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 2px;
+  margin-bottom: 16px;
+}
+
+ul#results {
+  border: solid 1px #e2e8eb;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px 2px #ebeff0;
+
+  li + li {
+    border-top: solid 1px #e2e8eb;
+  }
+
+  li {
+    font-size: 16px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+  }
+
+  li > span:first-child {
+    font-weight: 500;
+    width: 100px;
+  }
+}
+
+p.desc {
+  margin-top: 22px;
+  font-size: 14px;
+}

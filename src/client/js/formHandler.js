@@ -1,13 +1,18 @@
+import { validateUrl } from "./validateUrl";
+
 function handleSubmit(event) {
   event.preventDefault();
 
   // check what text was put into the form field
-  let formText = document.getElementById("name").value;
-  Client.checkForName(formText);
+  let userInput = document.getElementById("name").value;
+  const isValid = validateUrl(userInput);
 
-  console.log("::: Form Submitted :::");
+  // if the input value is invalid, terminate the program
+  if (!isValid) {
+    return;
+  }
 
-  postData("http://localhost:8081/analyze", { url: formText }).then(function (
+  postData("http://localhost:8081/analyze", { url: userInput }).then(function (
     res
   ) {
     document.querySelector("span.agreement").innerHTML = `${res.agreement}`;

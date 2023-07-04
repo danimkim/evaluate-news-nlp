@@ -16,7 +16,7 @@ This project is a web tool that allows users to run Natural Language Processing(
 
 ## Demo
 
-https://verdant-piroshki-1d65a8.netlify.app/
+https://evaluate-news-nlp-danimkim.koyeb.app
 
 ## Implementation Notes
 

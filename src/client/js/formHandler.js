@@ -12,7 +12,7 @@ function handleSubmit(event) {
     return;
   }
 
-  postData("http://localhost:8081/analyze", { url: userInput }).then(function (
+  postData("/analyze", { url: userInput }).then(function (
     res
   ) {
     document.querySelector("span.agreement").innerHTML = `${res.agreement}`;
